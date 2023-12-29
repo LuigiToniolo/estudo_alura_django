@@ -4,6 +4,7 @@
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
+            {% include 'partials/_alertas.html' %}
             <div class="cabecalho__busca">
                 <div class="busca__fundo">
                     <form action="{% url 'buscar' %}">
@@ -16,7 +17,7 @@
             </div>
         </header>
         <main class="principal">
-            {% include 'galeria/partials/_menuLateral.html' %}
+            {% include 'partials/_menuLateral.html' %}
             <section class="conteudo">
                 <section class="banner">
                     <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner Alura Space">

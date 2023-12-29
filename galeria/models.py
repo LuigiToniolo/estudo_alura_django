@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User # -> Importando a tabela de usuarios nativa do django
 
 class Fotografia(models.Model):
     
@@ -18,6 +19,14 @@ class Fotografia(models.Model):
     foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True)
     publicada = models.BooleanField(default=False) 
     data_fotografia = models.DateTimeField(default=datetime.now, blank=False)
+    usuario = models.ForeignKey( #Fazendo a relação da tabela de usuários com as da galeria de fotos
+        to = User,
+        on_delete = models.SET_NULL,
+        null=True,
+        blank=False,
+        related_name="user",
+    ) 
+    
     
     #Boa prárica é criar essa função abaixo para devolver as colunas acima
     def __str__(self):
