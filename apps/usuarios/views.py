@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from usuarios.forms import LoginForms, CadastroForms
+from apps.usuarios.forms import LoginForms, CadastroForms
 from django.contrib.auth.models import User
 from django.contrib import auth #-> Lib do django que já se importa com as autenticações de login (verificação de db, etc)
 from django.contrib import messages #-> Lib do django que facilita a entrada de mensagens de erro, sucesso, etc
